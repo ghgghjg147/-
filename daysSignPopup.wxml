@@ -1,0 +1,66 @@
+<popup bannerId="{{shareVideoRule.adv.dailySignBanner}}" bindclose="toggleSignUp" showBanner="{{true}}" top="{{-120}}" wx:if="{{false}}">
+    <image class="days-sign-popup-title" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/popup/iocn-mrpd@2x.png"></image>
+    <block wx:if="{{daysSignStyle||player.yearCardUser}}">
+        <view class="tip-container">
+            <image class="tip-bg1" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/popup/iocn-lq@2x.png"></image>
+            <view class="tip-content">签到图文说明</view>
+            <view bindtap="switchDaysSignStyle" class="open-arrow-btn" hoverClass="btn-click" hoverStartTime="0" hoverStayTime="100" wx:if="{{!player.yearCardUser}}">
+                <image src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/index/iocn-jt.png"></image>
+            </view>
+        </view>
+        <view class="tip-container">
+            <image class="tip-bg2" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/popup/iocn-ck@2x.png"></image>
+            <view class="tip-content2">
+                <view>连续签到可获得意外奖励</view>
+                <view class="sign-list">
+                    <view class="sign-list-item" style="{{daysSignInfo.nowSignDays>daysSignInfo.week*6+1+index?'opacity:0.35':''}}" wx:for="{{7}}" wx:key="{{index}}">
+                        <image class="bg" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/index/mrqd-ylq.png" wx:if="{{daysSignInfo.nowSignDays>daysSignInfo.week*6+1+index}}"></image>
+                        <image class="bg" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/index/mrqd-ylq.png" wx:elif="{{daysSignInfo.nowSignDays==daysSignInfo.week*6+1+index&&player.sign}}"></image>
+                        <image class="bg" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/index/mrqd-lxpd.png" wx:elif="{{daysSignInfo.nowSignDays==daysSignInfo.week*6+1+index&&!player.sign}}"></image>
+                        <image class="bg" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/index/mrqd-dpd.png" wx:elif="{{daysSignInfo.nowSignDays<daysSignInfo.week*6+1+index}}"></image>
+                        <view class="days">{{daysSignInfo.week*6+1+index==daysSignInfo.nowSignDays?'今天':'第'+daysSignInfo.week*6+1+index+'天'}}</view>
+                        <view class="energy">
+              +{{player.signReward[index]}} </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </block>
+    <block wx:else>
+        <view class="tip-container">
+            <image class="tip-bg1" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/popup/iocn-lq@2x.png"></image>
+            <view class="tip-content">1.点击下方"签到"按钮，进入客服会话</view>
+        </view>
+        <view class="tip-container">
+            <image class="tip-bg2" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/popup/iocn-ck@2x.png"></image>
+            <view class="tip-content">
+        2.进入后，点击右下角链接领取能量
+        <image class="tip-img" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/popup/tc-pdtp@2x.png"></image>
+            </view>
+            <view bindtap="switchDaysSignStyle" class="close-arrow-btn" hoverClass="btn-click" hoverStartTime="0" hoverStayTime="100">
+                <image src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/index/iocn-jt.png"></image>
+            </view>
+        </view>
+    </block>
+    <view class="sign-up-container" wx:if="{{player.sign}}">
+        <image class="sign-up-btn" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/common/pd-defauit-pd.png"></image>
+    </view>
+    <button showMessageCard bindtap="toSign" class="btn_default sign-up-container" data-type="sign" hoverClass="btn-click" hoverStartTime="0" hoverStayTime="100" openType="{{player.yearCardUser&&shareVideoRule.dailySign==2?'':'contact'}}" sendMessageImg="{{shareResult.daily_sign.imageUrl?shareResult.daily_sign.imageUrl:'{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/popup/icon-lp@2x.png'}}" sendMessagePath="/pages/index/index" sendMessageTitle="{{shareResult.daily_sign.title?shareResult.daily_sign.title:'每日签到领能量'}}" sessionFrom="sign" wx:else>
+        <image class="sign-up-btn" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/popup/pd-defauit-pd@2x.png"></image>
+    </button>
+</popup>
+<popup bindclose="toggleSignUp" class="new-user-guide" notShowClose="{{true}}" zIndex="{{999}}">
+    <image bindtap="toggleSignUp" class="close-btn" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/component/popupMoreGame/hbtc-qx.png"></image>
+    <view class="desc">
+        <text>进入客服后，点右下角卡片
+完成签到即可继续游戏</text>
+    </view>
+    <image class="guide-img" src="/image/component/guide/pop_nln_img.png"></image>
+    <view class="sign-up-container" wx:if="{{player.sign}}">
+        <image class="sign-up-btn" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/common/pd-defauit-pd.png"></image>
+    </view>
+    <button showMessageCard bindtap="toSign" class="btn_default sign-up-container2 start-text-move" data-type="sign" hoverClass="btn-click" hoverStartTime="0" hoverStayTime="100" openType="{{player.yearCardUser&&shareVideoRule.dailySign==2?'':'contact'}}" sendMessageImg="{{shareResult.daily_sign.imageUrl?shareResult.daily_sign.imageUrl:'{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/popup/icon-lp@2x.png'}}" sendMessagePath="/pages/index/index" sendMessageTitle="{{shareResult.daily_sign.title?shareResult.daily_sign.title:'每日签到领能量'}}" sessionFrom="sign" wx:else>
+        <image class="sign-up-btn2" src="/image/component/guide/btn_dcjr.png"></image>
+    </button>
+</popup>
+<wxs module="fn" src="../../common.wxs" />

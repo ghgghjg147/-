@@ -1,0 +1,85 @@
+.red-point {
+    width: 32rpx;
+    height: 32rpx;
+    display: block;
+    position: absolute;
+    right: -8rpx;
+    top: -10rpx;
+    z-index: 1;
+}
+
+.down {
+    top: -2rpx;
+}
+
+.move {
+    animation: boxMove1 4s infinite;
+}
+
+@-webkit-keyframes boxMove1 {
+    0% {
+        transform: translateY(0);
+    }
+
+    5% {
+        transform: translateY(-10rpx) scale(1,0.95);
+    }
+
+    10% {
+        transform: translateY(0);
+    }
+
+    15% {
+        transform: translateY(-10rpx) scale(1,0.95);
+    }
+
+    20% {
+        transform: translateY(0);
+    }
+
+    25% {
+        transform: translateY(-10rpx) scale(1,0.95);
+    }
+
+    30% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes boxMove1 {
+    0% {
+        transform: translateY(0);
+    }
+
+    5% {
+        transform: translateY(-10rpx) scale(1,0.95);
+    }
+
+    10% {
+        transform: translateY(0);
+    }
+
+    15% {
+        transform: translateY(-10rpx) scale(1,0.95);
+    }
+
+    20% {
+        transform: translateY(0);
+    }
+
+    25% {
+        transform: translateY(-10rpx) scale(1,0.95);
+    }
+
+    30% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}

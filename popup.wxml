@@ -1,0 +1,12 @@
+<view class="list-popup" style="z-index:{{zIndex}}">
+    <view class="popup-container {{isList?'list':'normal'}}" style="width:{{width}}rpx;margin-top:{{top}}rpx;">
+        <slot></slot>
+        <view bindtap="close" class="close-btn-container" hoverClass="btn-click" hoverStartTime="0" hoverStayTime="100" wx:if="{{!notShowClose}}">
+            <image class="close-btn" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/word/cyjs-defauit-fh@2x.png"></image>
+        </view>
+    </view>
+    <view class="page-bottom" wx:if="{{showBanner}}">
+        <ad binderror="bannerError" bindload="bannerLoad" class="ad" unitId="{{bannerId}}" wx:if="{{isShowBanner&&bannerId}}"></ad>
+    </view>
+</view>
+<wxs module="fn" src="../../common.wxs" />

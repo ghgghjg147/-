@@ -1,0 +1,74 @@
+<popup bindclose="close" class="new-user-guide" notShowClose="{{true}}" width="{{666}}">
+    <view class="popup-title">
+        <image class="popup-title-bg" src="/image/popup/dk.png"></image>
+        <image class="popup-title-text" src="/image/popup/yqhydnl.png"></image>
+    </view>
+    <image bindtap="close" class="close-btn" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/component/popupMoreGame/hbtc-qx.png"></image>
+    <view class="content">
+        <view class="content-item">
+            <image class="item-bg" src="/image/component/shareGuide/mflnl-dk1.png"></image>
+            <view class="item-container">
+                <view class="icon">
+                    <image class="icon-heart" src="/image/component/shareGuide/iocn-ax.png"></image>
+                    <view class="icon-num" data-text="x6" wx:if="{{isShowText}}">x6</view>
+                </view>
+                <view class="desc1">
+                    <text class="red">自己</text>可获得6点能量</view>
+                <view class="desc2">邀请新用户完成6关</view>
+            </view>
+        </view>
+        <view class="content-item">
+            <image class="item-bg" src="/image/component/shareGuide/mflnl-dk1.png"></image>
+            <view class="item-container">
+                <view class="icon">
+                    <image class="icon-heart" src="/image/component/shareGuide/iocn-ax.png"></image>
+                    <view class="icon-num" data-text="x1" wx:if="{{isShowText}}">x1</view>
+                </view>
+                <view class="desc1">
+                    <text class="red">好友</text>可获得1点能量</view>
+            </view>
+        </view>
+    </view>
+    <button bindtap="playSound" class="btn_default share-btn2 start-text-move" data-type="newUser" openType="share">
+        <image class="wx-icon" src="/image/component/shareGuide/icon.png"></image>分享好友</button>
+</popup>
+<view class="invite-more-friend" wx:if="{{moreStep!=0}}">
+    <view class="invite-more-container">
+        <view class="invite-more-desc" wx:if="{{moreStep==1}}">首次分享</view>
+        <view class="invite-more-desc" wx:elif="{{moreStep==2}}">获得能量概率已翻倍</view>
+        <view class="invite-more-content">
+            <view bindtap="closeMore" class="close-btn-container" hoverClass="btn-click" hoverStartTime="0" hoverStayTime="100">
+                <image class="close-btn2" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/word/cyjs-defauit-fh@2x.png"></image>
+            </view>
+            <view class="content">
+                <view class="content-title" wx:if="{{moreStep==1}}">分享给
+          <view class="red"> 不同 </view>好友，获得能量奖励概率
+          <view class="red"> 翻倍</view>
+                </view>
+                <view class="content-title" wx:elif="{{moreStep==2}}">再分享到
+          <view class="red"> 1个 </view>群，获得能量奖励概率翻
+          <view class="red"> 2倍</view>
+                </view>
+                <view class="content-text">
+                    <view bindanimationend="animationend1" class="text-item {{isDetailFinish?animalStep==1?'text1-up':'text1-up2':''}}">
+            {{text1[0]}}分享
+            <view class="red"> {{text1[1]}} </view>获得
+            <view class="red"> {{text1[2]}} </view>能量奖励
+          </view>
+                    <view class="text-item {{isDetailFinish?animalStep==1?'text2-up':'text2-up2':''}}">
+            {{text2[0]}}分享
+            <view class="red"> {{text2[1]}} </view>获得
+            <view class="red"> {{text2[2]}} </view>能量奖励
+          </view>
+                </view>
+                <button bindtap="playSound" class="btn_default" data-type="newUser" openType="share" wx:if="{{moreStep==1}}">
+                    <image class="share-btn" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/component/inviteNewUser/fxhy.png"></image>
+                </button>
+                <button bindtap="playSound" class="btn_default" data-type="newUser" openType="share" wx:if="{{moreStep==2}}">
+                    <image class="share-btn" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/component/inviteNewUser/fxdq.png"></image>
+                </button>
+            </view>
+        </view>
+    </view>
+</view>
+<wxs module="fn" src="../../common.wxs" />

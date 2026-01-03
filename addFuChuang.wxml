@@ -1,0 +1,11 @@
+<popup bannerId="{{shareVideoRule.adv.commonBanner}}" bindclose="close" class="invite-new-user" notShowClose="{{true}}" showBanner="{{true}}">
+    <view class="no-energy-popup">
+        <view class="popup-title">
+            <image class="popup-title-bg" src="/image/popup/dk.png"></image>
+            <image class="popup-title-text" src="/image/popup/tjfcdnl.png"></image>
+        </view>
+        <image bindtap="close" class="close-btn" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/component/popupMoreGame/hbtc-qx.png"></image>
+        <image class="title-content" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/component/addFuChuang/tjfcdnl-tp.png"></image>
+    </view>
+</popup>
+<wxs module="fn" src="../../common.wxs" />

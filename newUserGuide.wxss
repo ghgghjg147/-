@@ -1,0 +1,94 @@
+.title {
+    font-size: 64rpx;
+    font-family: Microsoft YaHei;
+    font-weight: bold;
+    color: rgba(72,53,38,1);
+    margin: 32rpx 0 45rpx;
+    text-align: center;
+}
+
+.gif {
+    width: 600rpx;
+    height: 480rpx;
+    background: rgba(199,187,165,1);
+    border-radius: 20rpx;
+    display: block;
+    margin: 0 auto 37rpx;
+}
+
+.desc-content {
+    width: 600rpx;
+    height: 138rpx;
+    background: rgba(199,187,165,1);
+    border-radius: 20rpx;
+    margin: 0 auto 33rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.close-btn {
+    width: 66rpx;
+    height: 66rpx;
+    display: block;
+    position: absolute;
+    right: 26rpx;
+    top: 26rpx;
+}
+
+.desc {
+    font-size: 34rpx;
+    font-family: Source Han Sans CN;
+    font-weight: bold;
+    color: rgba(87,67,50,1);
+    line-height: 48rpx;
+    text-align: center;
+}
+
+.btn {
+    width: 546rpx;
+    height: 123rpx;
+    display: block;
+    margin: 33rpx auto;
+}
+
+.start-text-move {
+    animation: startText 1.5s infinite;
+}
+
+@-webkit-keyframes startText {
+    0% {
+        transform: scale(1);
+    }
+
+    40% {
+        transform: scale(1.1);
+    }
+
+    80% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes startText {
+    0% {
+        transform: scale(1);
+    }
+
+    40% {
+        transform: scale(1.1);
+    }
+
+    80% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}

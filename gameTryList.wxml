@@ -1,0 +1,35 @@
+<popup bannerId="{{shareVideoRule.adv.commonBanner}}" bindclose="close" class="invite-list-popup" notShowClose="{{true}}" showBanner="{{true}}" top="{{-200}}">
+    <view class="invite-container">
+        <view class="popup-title">
+            <image class="popup-title-bg" src="/image/popup/dk.png"></image>
+            <image class="popup-title-text" src="/image/popup/swyxdnl.png"></image>
+        </view>
+        <image bindtap="close" class="close-btn" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/component/popupMoreGame/hbtc-qx.png"></image>
+        <view class="invite-list">
+            <view class="invite-item" wx:if="{{item.getStatus!=2}}" wx:for="{{gameTryList}}" wx:key="{{index}}">
+                <image class="invite-item-bg" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/popup/gzdj-iocn-zjx@2x.png"></image>
+                <view class="invite-content">
+                    <view class="invite-left">
+                        <image class="invite-avatar" src="{{item.gameIcon}}"></image>
+                        <view class="invite-msg">
+                            <view class="invite-title">{{item.gameName}}</view>
+                            <view class="invite-reward">
+                                <view class="invite-reward-tip">试玩12秒，即可领取</view>
+                                <image class="invite-icon" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/component/navBar/home-Icon-lives@2x.png"></image>
+                                <view class="invite-num">×{{item.bonusValue}}</view>
+                            </view>
+                        </view>
+                    </view>
+                    <view bindtap="toTryGame" class="invite-btn-container" data-item="{{item}}" hoverClass="btn-click" hoverStartTime="0" hoverStayTime="100" wx:if="{{!item.getStatus}}">
+                        <image class="invite-btn" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/gameTry/disabled-sw.png"></image>
+                    </view>
+                    <view bindtap="toGetMoney" class="invite-btn-container" data-item="{{item}}" hoverClass="btn-click" hoverStartTime="0" hoverStayTime="100" wx:if="{{item.getStatus==1}}">
+                        <redpoint></redpoint>
+                        <image class="invite-btn" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/popup/disabled-lq@2x.png"></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</popup>
+<wxs module="fn" src="../../common.wxs" />

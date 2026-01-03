@@ -1,0 +1,63 @@
+.component-bg {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 20;
+    background: rgba(44,40,36,0.65);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.component-container {
+    width: 646rpx;
+    height: 774rpx;
+    position: relative;
+}
+
+.main-image {
+    width: 646rpx;
+    height: 774rpx;
+}
+
+.bg-image {
+    width: 849rpx;
+    height: 798rpx;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: -1;
+    animation: rotateAnimation 6s linear infinite;
+}
+
+@-webkit-keyframes rotateAnimation {
+    0% {
+        transform: translate(-50%,-50%) scale(1.5) rotate(0);
+    }
+
+    100% {
+        transform: translate(-50%,-50%) scale(1.5) rotate(360deg);
+    }
+}
+
+@keyframes rotateAnimation {
+    0% {
+        transform: translate(-50%,-50%) scale(1.5) rotate(0);
+    }
+
+    100% {
+        transform: translate(-50%,-50%) scale(1.5) rotate(360deg);
+    }
+}
+
+.close-image {
+    width: 66rpx;
+    height: 66rpx;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: -106rpx;
+    z-index: 999;
+}

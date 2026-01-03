@@ -1,0 +1,14 @@
+{
+    "component": true,
+    "usingComponents": {
+        "popup": "../../component/popup/popup",
+        "shop": "../../component/shop/shop",
+        "friendLineGuide": "../../component/friendLineGuide/friendLineGuide",
+        "gzhEnergyPopup": "../../component/gzhEnergyPopup/gzhEnergyPopup",
+        "inviteNewUser": "../../component/inviteNewUser/inviteNewUser",
+        "gameTryList": "../../component/gameTryList/gameTryList",
+        "shareGuide": "../../component/shareGuide/shareGuide",
+        "shareSuccess": "../../component/shareSuccess/shareSuccess",
+        "daysSignPopup": "../../component/daysSignPopup/daysSignPopup"
+    }
+}

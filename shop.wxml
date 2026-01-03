@@ -1,0 +1,136 @@
+<popup bindclose="close" class="shop" notShowClose="{{true}}" top="{{110}}" width="{{720}}">
+    <view class="shop-container" wx:if="{{isShowShop}}">
+        <view class="popup-title">
+            <image class="popup-title-bg" src="/image/popup/dk.png"></image>
+            <image class="popup-title-text" src="/image/popup/gmnl.png"></image>
+        </view>
+        <image bindtap="close" class="close-btn" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/component/popupMoreGame/hbtc-qx.png"></image>
+        <view class="shop-item-list" wx:if="{{pageReady&&!isBuyYear}}">
+            <view class="shop-item" wx:if="{{!isBuyNew}}">
+                <image class="shop-tag" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/shop/gmnl_tag_xyc.png"></image>
+                <image class="shop-item-bg" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/shop/gmnl_board_1.png"></image>
+                <view class="item-content">
+                    <view class="item-title">
+            新用户专享
+          </view>
+                    <view class="item-line"></view>
+                    <view class="year-money">
+                        <image class="good-icon" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/shop/ic_ax_big.png"></image>
+                        <view class="good-num" data-text="x{{newData.propValue}}" wx:if="{{isShowText}}">x{{newData.propValue}}</view>
+                    </view>
+                    <view bindgetuserinfo="bindgetuserinfo" bindtap="toBuy" class="btn-container" data-item="{{newData}}" hoverClass="btn-click" hoverStartTime="0" hoverStayTime="100" openType="{{isIos&&needAuth?'getUserInfo':''}}">
+                        <image class="btn-bg" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/shop/gmnl-an.png"></image>
+                        <view class="btn-content" wx:if="{{isShowText}}">
+                            <view class="cur-money" data-text="￥{{newData.price}}">￥{{newData.price}}</view>
+                            <view class="ori-money">￥{{newData.originalPrice}}</view>
+                        </view>
+                    </view>
+                    <view class="year-bottom">已售：{{newData.saleNum}}</view>
+                </view>
+            </view>
+            <view class="shop-item" wx:else>
+                <image class="shop-item-bg" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/shop/gmnl_board_1.png"></image>
+                <view class="item-content">
+                    <view class="item-title">
+            单次购买
+          </view>
+                    <view class="item-line"></view>
+                    <view class="year-money">
+                        <image class="good-icon" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/shop/ic_ax_big.png"></image>
+                        <view class="good-num" data-text="x{{oneData.propValue}}" wx:if="{{isShowText}}">x{{oneData.propValue}}</view>
+                    </view>
+                    <view bindgetuserinfo="bindgetuserinfo" bindtap="toBuy" class="btn-container" data-item="{{oneData}}" hoverClass="btn-click" hoverStartTime="0" hoverStayTime="100" openType="{{isIos&&needAuth?'getUserInfo':''}}">
+                        <image class="btn-bg" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/shop/gmnl-an.png"></image>
+                        <view class="btn-content" wx:if="{{isShowText}}">
+                            <view class="cur-money" data-text="￥{{oneData.price}}">￥{{oneData.price}}</view>
+                        </view>
+                    </view>
+                    <view class="year-bottom">已售：{{oneData.saleNum}}</view>
+                </view>
+            </view>
+            <view class="shop-item">
+                <image class="shop-item-bg year" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/shop/gmnl_board_2.png"></image>
+                <image class="shop-tag" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/shop/gmnl_tag_jhtj.png" wx:if="{{discountPop||leftTime==0}}"></image>
+                <image class="shop-tag" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/shop/gmnl_tag_xsyh.png" wx:else></image>
+                <view class="item-content year">
+                    <view class="item-title">
+                        <image class="title-img year" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/shop/gmnl-wxnlnk.png"></image>
+                    </view>
+                    <view class="item-line year"></view>
+                    <image class="year-desc" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/shop/lxqd.png"></image>
+                    <view class="content-middle">
+                        <view class="middle-left">
+                            <view class="year-money buy-new">
+                                <image class="good-icon year" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/component/navBar/iocn-ax@2x.png"></image>
+                                <view class="good-num" data-text="999+" wx:if="{{isShowText}}">999+</view>
+                            </view>
+                            <view class="tip-desc">
+                额外赠送10点提示
+                <image class="tip-icon" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/shop/ic_ts.png"></image>
+                            </view>
+                        </view>
+                        <view class="middle-right">
+                            <view class="ticket-time" style="opacity:{{discountPop||leftTime==0?0:1}}">优惠过期时间：{{countDown}}</view>
+                            <view bindgetuserinfo="bindgetuserinfo" bindtap="toBuy" class="buy-btn start-text-move" data-item="{{yearData}}" hoverClass="btn-click" hoverStartTime="0" hoverStayTime="100" openType="{{isIos&&needAuth?'getUserInfo':''}}">
+                                <image class="buy-btn-bg" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/shop/ljcg.png"></image>
+                                <view class="buy-btn-content">
+                                    <view class="buy-btn-cur">仅需￥{{discountPop||leftTime==0?yearData.price:yearData.discountPrice}}</view>
+                                    <view class="buy-btn-old">￥{{yearData.originalPrice}}</view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="content-text">
+                        <view bindanimationend="animationend1" class="text-item {{isDetailFinish?animalStep==1?'text1-up':'text1-up2':''}}">
+                            <image class="avatar" src="{{text1.avatarUrl}}"></image>
+              {{text1.nickName}} {{text1.tip}}
+            </view>
+                        <view class="text-item {{isDetailFinish?animalStep==1?'text2-up':'text2-up2':''}}">
+                            <image class="avatar" src="{{text2.avatarUrl}}"></image>
+              {{text2.nickName}} {{text2.tip}}
+            </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="shop-item-list" wx:elif="{{pageReady&&isBuyYear}}">
+            <view class="shop-item" data-item="{{item}}" wx:for="{{propList}}">
+                <image class="shop-tag buy-new" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/shop/gmnl-gmcg.png"></image>
+                <image class="shop-item-bg buy-new" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/shop/gmnl-bj3.png"></image>
+                <view class="item-content">
+                    <view class="item-title">
+                        <image class="title-img year" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/shop/gmnl-wxnlnk.png"></image>
+                    </view>
+                    <view class="item-line year buy-new"></view>
+                    <view class="item-desc year buy-new">{{item.remark}}</view>
+                    <view class="year-money buy-new">
+                        <image class="good-icon buy-new" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/component/navBar/iocn-ax@2x.png"></image>
+                        <view class="year-cur-money buy-year" data-text="999+" wx:if="{{isShowText}}">999+</view>
+                    </view>
+                    <view class="year-date" data-text="有效期:{{item.expDate}}">有效期:{{item.expDate}}</view>
+                </view>
+            </view>
+            <view class="year-tip">自购买日起，连续签到30天即可申请退款</view>
+            <block wx:if="{{!yearData.brokenSign}}">
+                <view class="year-tip" wx:if="{{yearData.totalSign<30}}">当前已连续签到{{yearData.totalSign}}天</view>
+                <view class="year-tip" wx:else>当前已连续签到{{yearData.totalSign}}天
+          <view class="blue">点击申请退款</view>
+                </view>
+            </block>
+            <view class="year-tip" wx:else>{{yearData.brokenSignDate}}未签到，当前已断签无法申请退款</view>
+        </view>
+    </view>
+</popup>
+<shopTicket bindclose="closeTicket" bindtoBuyTicket="toBuyTicket" countDown="{{countDown2}}" isIos="{{isIos}}" needAuth="{{needAuth}}" yearData="{{yearData}}" wx:if="{{isShowTicket}}"></shopTicket>
+<popup bindclose="toggleGuide" class="new-user-guide" notShowClose="{{true}}" zIndex="{{999}}" wx:if="{{isShowGuide}}">
+    <image bindtap="toggleGuide" class="close-btn" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/component/popupMoreGame/hbtc-qx.png"></image>
+    <view class="desc">
+        <text>进入客服后，点右下角卡片
+点击购买链接，完成支付</text>
+    </view>
+    <image class="guide-img" src="/image/component/guide/pop_gmlj_img.png"></image>
+    <button showMessageCard bindgetuserinfo="bindgetuserinfo" bindtap="toShopContact" class="btn_default sign-up-container2 start-text-move" openType="{{needAuth?'getUserInfo':'contact'}}" sendMessageImg="{{shareResult.buy_href.imageUrl?shareResult.buy_href.imageUrl:''}}" sendMessagePath="/pages/index/index?propId={{currentItem.propId}}" sendMessageTitle="{{shareResult.buy_href.title?shareResult.buy_href.title:'点击下方购买链接'}}" sessionFrom="shop">
+        <image class="sign-up-btn2" src="/image/component/guide/btn_dcjr.png"></image>
+    </button>
+</popup>
+<wxs module="fn" src="../../common.wxs" />

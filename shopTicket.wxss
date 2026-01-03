@@ -1,0 +1,247 @@
+.btn_default {
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    text-align: left;
+    line-height: normal;
+    overflow: visible;
+}
+
+.btn_default::after {
+    border: none;
+}
+
+.btn-click {
+    transform: scale(0.9,0.9)!important;
+    transition: all 0.1s;
+}
+
+.shop-ticket {
+    width: 100%;
+    height: 100%;
+    background: rgba(27,26,25,0.9);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 20;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.shop-ticket-container {
+    position: relative;
+}
+
+.bg {
+    width: 600rpx;
+    height: 770rpx;
+    display: block;
+    position: relative;
+    z-index: 2;
+}
+
+.close-btn {
+    width: 64rpx;
+    height: 64rpx;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-top: -100rpx;
+}
+
+.close-btn-image {
+    width: 64rpx;
+    height: 64rpx;
+    display: block;
+}
+
+.shop-ticket-content {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    text-align: center;
+    z-index: 2;
+}
+
+.title1 {
+    font-size: 40rpx;
+    font-family: PingFang-SC-Heavy;
+    font-weight: 800;
+    color: rgba(62,62,62,1);
+    margin: 44rpx 0 19rpx;
+    line-height: 1;
+}
+
+.title2 {
+    font-size: 30rpx;
+    font-family: PingFang-SC-Medium;
+    font-weight: 500;
+    color: rgba(90,90,90,1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30rpx;
+    line-height: 1;
+}
+
+.line {
+    width: 30rpx;
+    height: 1rpx;
+    background: rgba(136,136,136,1);
+    margin: 0 42rpx;
+}
+
+.money {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.num {
+    font-size: 120rpx;
+    font-family: PingFang-SC-Heavy;
+    font-weight: bold;
+    color: rgba(242,92,62,1);
+    line-height: 1;
+}
+
+.unit {
+    font-size: 40rpx;
+    font-family: PingFang-SC-Heavy;
+    font-weight: bold;
+    color: rgba(242,92,62,1);
+    margin-left: 10rpx;
+    line-height: 1;
+}
+
+.time {
+    font-size: 30rpx;
+    font-family: PingFang-SC-Heavy;
+    font-weight: bold;
+    color: rgba(164,53,31,1);
+    margin: 30rpx 0 55rpx;
+    line-height: 1;
+}
+
+.prop-title {
+    width: 188rpx;
+    height: 38rpx;
+    display: block;
+    margin: auto;
+}
+
+.desc {
+    font-size: 28rpx;
+    font-family: PingFang-SC-Medium;
+    font-weight: 500;
+    color: rgba(90,90,90,1);
+    line-height: 1;
+    margin: 9rpx 0 85rpx;
+}
+
+.btn {
+    width: 466rpx;
+    height: 140rpx;
+    margin: auto;
+    position: relative;
+}
+
+.btn-bg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.btn-content {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transform: translate(4%,-6%);
+}
+
+.btn-money {
+    font-size: 56rpx;
+    font-family: PingFang-SC-Heavy;
+    font-weight: bold;
+    color: rgba(208,58,47,1);
+    line-height: 1;
+}
+
+.btn-desc {
+    font-size: 36rpx;
+    font-family: PingFang-SC-Heavy;
+    font-weight: bold;
+    color: rgba(170,108,0,1);
+    line-height: 1;
+}
+
+.price {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.cur-price {
+    font-size: 36rpx;
+    font-family: PingFang-SC-Heavy;
+    font-weight: 800;
+    color: rgba(141,35,23,1);
+    margin-top: 15rpx;
+}
+
+.origin-price {
+    font-size: 28rpx;
+    font-family: PingFang-SC-Heavy;
+    font-weight: 800;
+    text-decoration: line-through;
+    color: rgba(141,35,23,1);
+    margin-left: 10rpx;
+}
+
+.reward-img {
+    width: 750rpx;
+    height: 750rpx;
+    animation: bgRotate2 4s linear infinite;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -375rpx;
+    margin-top: -375rpx;
+    z-index: 0;
+}
+
+@-webkit-keyframes bgRotate2 {
+    0% {
+        transform: rotate(0) scale(2);
+    }
+
+    100% {
+        transform: rotate(360deg) scale(2);
+    }
+}
+
+@keyframes bgRotate2 {
+    0% {
+        transform: rotate(0) scale(2);
+    }
+
+    100% {
+        transform: rotate(360deg) scale(2);
+    }
+}
+
+.btn-click {
+    transform: scale(0.9,0.9)!important;
+    transition: all 0.1s;
+}

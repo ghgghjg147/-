@@ -1,0 +1,25 @@
+<view catchtap class="days-login-reward" wx:for="{{getRewardList}}" wx:key="{{key}}">
+    <image class="open-title" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/index/icon-hqnl.png" wx:if="{{item.rewardType==1}}"></image>
+    <image class="open-title" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/index/icon-hbts.png" wx:if="{{item.rewardType==2}}"></image>
+    <view class="shop-reward-tip">
+    成功邀请好友奖励
+  </view>
+    <view class="reward-content" style="margin-top:-150rpx;">
+        <block wx:if="{{item.rewardType==1}}">
+            <image class="reward-img" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/index/mrdl-bj-gs.png"></image>
+            <view class="reward-icon-box flex-box" style="margin-left:50rpx;">
+                <image class="reward-xx" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/index/icon-mrdljl-ax.png"></image>
+            </view>
+        </block>
+        <block wx:if="{{item.rewardType==2}}">
+            <image class="reward-img" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/index/mrdl-bj-gs.png"></image>
+            <view class="reward-icon-box flex-box" style="margin-top:-30rpx;">
+                <image class="reward-ts" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/index/hdts-ts.png"></image>
+            </view>
+        </block>
+        <view bindtap="closeReward" class="reward-btn-big">
+            <image src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/index/icon-jsgz-hd@2x.png"></image>
+        </view>
+    </view>
+</view>
+<wxs module="fn" src="../../common.wxs" />

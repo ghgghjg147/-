@@ -1,0 +1,8 @@
+<popup bindclose="close" class="new-user-guide" notShowClose="{{true}}" zIndex="{{999}}">
+    <image bindtap="close" class="close-btn" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/component/popupMoreGame/hbtc-qx.png"></image>
+    <image class="icon" src="/image/component/showOffPopup/icon-fxcg.png"></image>
+    <view class="desc1">分享成功啦</view>
+    <view class="desc2">觉得不错，分享给更多好友！</view>
+    <button bindtap="toShare" class="btn_default share-btn start-text-move">继续分享</button>
+</popup>
+<wxs module="fn" src="../../common.wxs" />

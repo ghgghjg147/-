@@ -1,0 +1,94 @@
+<popup bindclose="closeNoEnergyPopup">
+    <view class="no-energy-popup">
+        <view class="title-text">提示用光了</view>
+        <view class="desc" wx:if="{{!isShowShop}}">免费提示领取</view>
+        <block wx:if="{{shareVideoRule.gameRemind==2}}">
+            <view class="content" wx:if="{{!isShowShop}}">
+                <view class="left">
+                    <view class="top">
+                        <image class="tip-icon" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/component/noTip/pop_ic_ts.png"></image>×1
+          </view>
+                    <view class="bottom">看完15秒视频可领取</view>
+                </view>
+                <view bindtap="toWatchVideo" class="button">
+                    <image class="btn-icon" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/component/noTip/nlyg_ic_sp.png"></image>
+          免费领取
+        </view>
+            </view>
+            <view class="content shop" wx:else>
+                <view class="content-title">免费提示</view>
+                <view class="content-box">
+                    <view class="left">
+                        <view class="top">
+                            <image class="tip-icon" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/component/noTip/pop_ic_ts.png"></image>×1
+            </view>
+                        <view class="bottom">看完15秒视频可领取</view>
+                    </view>
+                    <view bindtap="toWatchVideo" class="button">
+                        <image class="btn-icon" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/component/noTip/nlyg_ic_sp.png"></image>
+            免费领取
+          </view>
+                </view>
+            </view>
+        </block>
+        <block wx:else>
+            <view class="content" wx:if="{{!isShowShop}}">
+                <view class="left">
+                    <view class="top">
+                        <image class="tip-icon" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/component/noTip/pop_ic_ts.png"></image>×1
+          </view>
+                    <view class="bottom">好友点击，额外+2</view>
+                </view>
+                <button bindtap="toShare" class="btn_default button" data-type="tip" openType="share">
+                    <image class="btn-icon" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/component/noTip/nlyg_ic_fx.png"></image>
+          分享到群
+        </button>
+            </view>
+            <view class="content shop" wx:else>
+                <view class="content-title">免费提示</view>
+                <view class="content-box">
+                    <view class="left">
+                        <view class="top">
+                            <image class="tip-icon" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/component/noTip/pop_ic_ts.png"></image>×1
+            </view>
+                        <view class="bottom">好友点击，额外+2</view>
+                    </view>
+                    <button bindtap="toShare" class="btn_default button" data-type="tip" openType="share">
+                        <image class="btn-icon" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/component/noTip/nlyg_ic_fx.png"></image>
+            分享到群
+          </button>
+                </view>
+            </view>
+        </block>
+        <view class="content" wx:if="{{isShowShop}}">
+            <view class="left">
+                <view class="top">
+                    <image class="tip-icon" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/component/noTip/pop_ic_ts.png"></image>×{{player.tipItem.propValue}}
+        </view>
+                <view class="bottom"></view>
+            </view>
+            <view bindtap="toBuy" class="button shop" data-item="{{player.tipItem}}">
+                <view class="cur-price">{{player.tipItem.price}}元</view>
+                <view class="origin-price">{{player.tipItem.originalPrice}}</view>
+            </view>
+        </view>
+    </view>
+</popup>
+<popup bindclose="toggleGuide" wx:if="{{isShowGuide}}">
+    <image class="days-sign-popup-title" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/shop/iocn-gzhnl.png"></image>
+    <view class="tip-container">
+        <image class="tip-bg1" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/popup/iocn-lq@2x.png"></image>
+        <view class="tip-content">1.点击下方“购买”按钮，进入客服会话</view>
+    </view>
+    <view class="tip-container">
+        <image class="tip-bg2" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/popup/iocn-ck@2x.png"></image>
+        <view class="tip-content">
+        2.进入后,点击右下角卡片获取支付链接
+        <image class="tip-img" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/shop/tc-gmnl.png"></image>
+        </view>
+    </view>
+    <button showMessageCard bindgetuserinfo="bindgetuserinfo" bindtap="toShopContact" class="btn_default sign-up-container" openType="{{needAuth?'getUserInfo':'contact'}}" sendMessageImg="{{shareResult.buy_href.imageUrl?shareResult.buy_href.imageUrl:''}}" sendMessagePath="/pages/index/index?propId={{currentItem.propId}}" sendMessageTitle="{{shareResult.buy_href.title?shareResult.buy_href.title:'点击下方购买链接'}}" sessionFrom="shop">
+        <image class="sign-up-btn" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/shop/pd-defauit-gm.png"></image>
+    </button>
+</popup>
+<wxs module="fn" src="../../common.wxs" />

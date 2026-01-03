@@ -1,0 +1,8 @@
+<view catchtap="close" class="component-bg">
+    <view class="component-container">
+        <image catchtap="click" class="main-image" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/component/popupGoActivity/hbtc.png"></image>
+        <image class="bg-image" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/index/mrdl-bj-gs.png"></image>
+        <image catchtap="close" class="close-image" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/component/popupGoActivity/hbtc-qx.png"></image>
+    </view>
+</view>
+<wxs module="fn" src="../../common.wxs" />

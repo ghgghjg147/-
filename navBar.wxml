@@ -1,0 +1,62 @@
+<view class="status-bar" style="height: {{statusBarHeight/pixelRate}}rpx;"></view>
+<view class="nav-bar" style="height: {{capsuleHeight/pixelRate}}rpx; top: {{statusBarHeight/pixelRate}}rpx; color: {{titleColor}}; font-size: {{titleFontSize}}rpx; font-weight: {{titleFontWeight}};" wx:if="{{showNavBar}}">
+    <view bindtap="toTest" class="power-container" wx:if="{{isShowPower}}">
+        <image class="power-icon" id="navBarLives" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/component/navBar/home-Icon-lives@2x.png"></image>
+        <view class="power-num" wx:if="{{!player.yearCardUser}}">{{energyTotal>99?'99+':energyTotal}}</view>
+        <view class="power-status" style="width:{{energyTotal>=energyMaxValue?'80':'112'}}rpx" wx:if="{{!player.yearCardUser}}">{{energyTotal>=energyMaxValue?'已满':countDown}}</view>
+        <view class="power-status" style="width:80rpx;" wx:else>无限</view>
+        <image bindtap="toggleShop" class="shop-enter" src="/image/component/navbar/shopEnter.png" wx:if="{{isShowShopEnter2}}"></image>
+        <view bindtap="toggleWatchVideo" class="shop-container" wx:elif="{{isIndex&&shareVideoRule.watchVideo==2}}">
+            <image class="shop-enter" src="/image/component/navbar/shopEnter.png"></image>
+            <image class="shop-video" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/game/icon-ts-sp@2x.png"></image>
+        </view>
+    </view>
+    <view bindtap="goBack" class="back-btn-container" hoverClass="btn-click" hoverStartTime="0" hoverStayTime="100" wx:if="{{isShowBack&&roundNum!=1&&roundNum!=2}}">
+        <image class="back-btn" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/component/navBar/yxz-default-home@2x.png" wx:if="{{!isBackBtn}}"></image>
+        <image class="back-btn" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/component/navBar/gfjxj-fh.png" wx:else></image>
+    </view>
+    <view class="round-num" data-text="第 {{roundNum}} 关" wx:if="{{isShowRound&&roundNum}}">第 {{roundNum}} 关</view>
+</view>
+<view hidden="{{!showMargin}}" style="padding-bottom: {{(statusBarHeight+capsuleHeight)/pixelRate}}rpx;"></view>
+<popup bindclose="closeNoEnergyPopup" showBanner="{{true}}" wx:if="{{showNoEnergyPopup}}">
+    <view class="no-energy-popup">
+        <view class="title-text">能量用完了</view>
+        <view class="remain-time">全部恢复时间：
+      <text class="remain-time-num">{{allM}}分{{allS}}秒</text>
+        </view>
+        <view class="reward-energy-container">
+            <image class="reward-energy-img" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/component/noEnergy/nlydl-ax.png"></image>
+        </view>
+        <view class="remain-once-time-container">
+            <view class="remain-once-time">{{countDown}}</view>
+        </view>
+        <view class="flex-box">
+            <block wx:if="{{shareGetEnergy.leftTimes>0}}">
+                <block wx:if="{{shareVideoRule.energyShortage!=4}}">
+                    <view bindtap="newPlayerFree" class="relative btn_default start-text-move" hoverClass="btn-click" hoverStartTime="0" hoverStayTime="100" wx:if="{{shareVideoRule.energyShortage==3}}">
+                        <image class="watch-ad-btn" src="/image/component/noEnergy/noEnergyBtn2.png"></image>
+                        <view class="no-energy-add-value" data-text="x{{shareGetEnergy.addValue}}">x{{shareGetEnergy.addValue}}</view>
+                    </view>
+                    <view bindtap="watchAd" class="relative btn_default start-text-move" hoverClass="btn-click" hoverStartTime="0" hoverStayTime="100" wx:elif="{{shareVideoRule.energyShortage==2}}">
+                        <image class="watch-ad-btn" src="/image/component/noEnergy/noEnergyBtn3.png"></image>
+                        <view class="no-energy-add-value" data-text="x{{shareGetEnergy.addValue}}">x{{shareGetEnergy.addValue}}</view>
+                    </view>
+                    <button bindtap="shareEarnEnergy" class="relative btn_default start-text-move" data-type="not-energy" hoverClass="btn-click" hoverStartTime="0" hoverStayTime="100" wx:else>
+                        <image class="watch-ad-btn" src="/image/component/noEnergy/noEnergyBtn1.png"></image>
+                        <view class="no-energy-add-value" data-text="x{{shareGetEnergy.addValue}}">x{{shareGetEnergy.addValue}}</view>
+                    </button>
+                </block>
+                <view class="btn-group" wx:else>
+                    <view bindtap="watchAd" class="relative btn_default" hoverClass="btn-click" hoverStartTime="0" hoverStayTime="100">
+                        <image class="watch-ad-btn2" src="/image/component/noEnergy/defauit-nfll.png"></image>
+                    </view>
+                    <button bindtap="shareEarnEnergy" class="relative btn_default start-text-move" data-type="not-energy" hoverClass="btn-click" hoverStartTime="0" hoverStayTime="100">
+                        <image class="watch-ad-btn2" src="/image/component/noEnergy/defauit-zpnl.png"></image>
+                    </button>
+                </view>
+            </block>
+        </view>
+    </view>
+</popup>
+<shareGuide bindclose="toggleShareGuide" bindshareScb="shareScb" pageType="{{pageGuideType}}" shareGuideType="{{shareGuideType}}" wx:if="{{isShowShareGuide}}"></shareGuide>
+<wxs module="fn" src="../../common.wxs" />

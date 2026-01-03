@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "popup": "../popup/popup",
+        "shopTicket": "../shopTicket/shopTicket"
+    }
+}

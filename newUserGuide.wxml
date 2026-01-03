@@ -1,0 +1,11 @@
+<popup bindclose="close" class="new-user-guide" notShowClose="{{true}}">
+    <view class="title">怎么玩?</view>
+    <image bindtap="close" class="close-btn" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/component/popupMoreGame/hbtc-qx.png"></image>
+    <image class="gif" src="{{shareResult.how_to_play.imageUrl}}"></image>
+    <view class="desc-content">
+        <view class="desc">点击下方的字，将正确的字填入红框内</view>
+        <view class="desc">字块变绿，表示成语正确</view>
+    </view>
+    <image bindtap="close" class="btn start-text-move" src="/image/component/newUserGuide/wzdl.png"></image>
+</popup>
+<wxs module="fn" src="../../common.wxs" />

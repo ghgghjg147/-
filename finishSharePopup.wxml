@@ -1,0 +1,32 @@
+<view class="finish-share">
+    <button class="btn_default card" data-type="finish-img" openType="share">
+        <image class="card-bg" src="/image/component/finishSharePopup/dhk.png"></image>
+        <view class="card-content">
+            <view class="card-title">
+                <image class="avatar" src="/image/component/finishSharePopup/tx.png"></image>
+                <view class="title">成语状元榜</view>
+            </view>
+            <view class="desc">{{shareTitle}}</view>
+            <image class="card-img" src="{{finishShareImg}}"></image>
+        </view>
+    </button>
+    <view class="btn-container">
+        <view bindtap="next" class="btn-item">
+            <image class="btn-icon" src="/image/component/finishSharePopup/jxdt.png"></image>
+            <view class="btn-title">继续答题</view>
+        </view>
+        <button class="btn_default btn-item" data-type="finish-img" openType="share">
+            <image class="btn-icon" src="/image/component/finishSharePopup/fghy.png"></image>
+            <view class="btn-title">发给好友</view>
+        </button>
+    </view>
+    <view class="bottom-bar">
+        <view class="bottom-text-container">
+            <view bindtap="close" class="bottom-text">关闭</view>
+            <view bindtap="next" class="bottom-text">下一关</view>
+        </view>
+        <button class="btn_default share-btn start-text-move" data-type="finish-img2" openType="share">
+            <image class="share-btn-image" src="/image/component/finishSharePopup/fxdq.png"></image>
+        </button>
+    </view>
+</view>

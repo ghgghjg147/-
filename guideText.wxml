@@ -1,0 +1,9 @@
+<view catchtap="closeGuide" class="guide" style="left:{{left}};top:{{top}}">
+    <image class="guide-arrow-up" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/common/ys-iocn-sjx@2x.png" style="margin-left:{{marginLeft}}" wx:if="{{arrow!=='none'&&direction==='up'}}"></image>
+    <view class="guide-content-box">
+        <view class="guide-content-text" data-text="{{content}}">{{content}}</view>
+        <view class="guide-content-text" data-text="{{content2}}" wx:if="{{content2}}">{{content2}}</view>
+    </view>
+    <image class="guide-arrow-down" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/common/ys-iocn-sjx@2x.png" style="margin-left:{{marginLeft}}" wx:if="{{arrow!=='none'&&direction==='down'}}"></image>
+</view>
+<wxs module="fn" src="../../common.wxs" />

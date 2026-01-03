@@ -1,0 +1,14 @@
+<view class="more-game-banner">
+    <view class="more-game-title">
+        <view class="more-game-text">猜你</view>
+        <view class="more-game-text">喜欢</view>
+    </view>
+    <view class="more-game-container">
+        <view class="more-game-list {{isSort?'sort':''}}">
+            <view bindtap="jumpToGame" class="more-game-item {{moveIndex==index?'move':''}}" data-index="{{index}}" data-item="{{item}}" wx:for="{{moreGameList}}">
+                <image class="item-img" src="{{item.gameIcon}}"></image>
+                <view class="item-title">{{item.gameName}}</view>
+            </view>
+        </view>
+    </view>
+</view>

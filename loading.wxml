@@ -1,0 +1,12 @@
+<view class="loading">
+    <image bindload="loadFinish" class="loading-bg" mode="widthFix" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/loading/load_img_4.png"></image>
+    <view class="loading-content">
+        <view class="loading-role">
+            <image class="role-head" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/loading/jzy-t.png"></image>
+            <image class="role-body" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/loading/jzy-st.png"></image>
+        </view>
+        <image class="loading-tip" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/loading/load_human_4.png"></image>
+    </view>
+    <view class="loading-text" wx:if="{{isShowText}}">{{text}}</view>
+</view>
+<wxs module="fn" src="../../common.wxs" />

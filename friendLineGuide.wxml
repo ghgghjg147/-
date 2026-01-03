@@ -1,0 +1,12 @@
+<popup bindclose="toggleGzhSignUp" class="new-user-guide" notShowClose="{{true}}" zIndex="{{999}}">
+    <image bindtap="toggleGzhSignUp" class="close-btn" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/component/popupMoreGame/hbtc-qx.png"></image>
+    <view class="desc">
+        <text>进入客服后，点右下角卡片
+完成分享朋友圈，继续游戏</text>
+    </view>
+    <image class="guide-img" src="/image/component/guide/pop_fxqyq_img.png"></image>
+    <button showMessageCard bindtap="toGzh" class="btn_default sign-up-container start-text-move" data-type="sharePyq" hoverClass="btn-click" hoverStartTime="0" hoverStayTime="100" openType="contact" sendMessageImg="{{shareResult.share_pyq.imageUrl?shareResult.share_pyq.imageUrl:'{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/popup/icon-lp@2x.png'}}" sendMessagePath="/pages/index/index?event=sharePyq{{friendLineType}}" sendMessageTitle="{{shareResult.share_pyq.title?shareResult.share_pyq.title:''}}" sessionFrom="sharePyq" style="margin-top:40rpx">
+        <image class="sign-up-btn" src="/image/component/guide/btn_dcjr.png"></image>
+    </button>
+</popup>
+<wxs module="fn" src="../../common.wxs" />

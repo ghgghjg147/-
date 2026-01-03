@@ -1,0 +1,104 @@
+.btn_default {
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    text-align: left;
+    line-height: normal;
+    overflow: visible;
+}
+
+.btn_default::after {
+    border: none;
+}
+
+.close-btn {
+    width: 66rpx;
+    height: 66rpx;
+    display: block;
+    position: absolute;
+    right: 26rpx;
+    top: 26rpx;
+}
+
+.share-btn {
+    width: 488rpx;
+    height: 92rpx;
+    background: rgba(36,184,36,1);
+    box-shadow: 0 2rpx 7rpx 0 rgba(36,184,36,1),0 1rpx 10rpx 0 rgba(36,184,36,0.5),0 -1rpx 10rpx 0 rgba(36,184,36,0.5);
+    border-radius: 46rpx;
+    margin: 24rpx auto 53rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+    font-size: 42rpx;
+    font-family: Source Han Sans CN;
+    font-weight: bold;
+    color: rgba(255,255,255,1);
+}
+
+.icon {
+    width: 178rpx;
+    height: 178rpx;
+    display: block;
+    margin: 106rpx auto 26rpx;
+}
+
+.desc1 {
+    font-size: 48rpx;
+    font-family: PingFang SC;
+    font-weight: bold;
+    color: rgba(37,37,37,1);
+    text-align: center;
+}
+
+.desc2 {
+    font-size: 36rpx;
+    font-family: PingFang SC;
+    font-weight: bold;
+    color: rgba(87,87,87,1);
+    text-align: center;
+    margin: 21rpx auto 48rpx;
+}
+
+.start-text-move {
+    animation: startText 1.5s infinite;
+}
+
+@-webkit-keyframes startText {
+    0% {
+        transform: scale(1);
+    }
+
+    40% {
+        transform: scale(1.1);
+    }
+
+    80% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes startText {
+    0% {
+        transform: scale(1);
+    }
+
+    40% {
+        transform: scale(1.1);
+    }
+
+    80% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}

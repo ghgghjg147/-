@@ -1,0 +1,111 @@
+<popup bindclose="close" class="new-user-guide" notShowClose="{{true}}" width="{{666}}" zIndex="{{999}}">
+    <view class="popup-title">
+        <image class="popup-title-bg" src="/image/popup/dk.png"></image>
+        <image class="popup-title-text" src="/image/popup/yqhydnl.png" wx:if="{{pageType==1}}"></image>
+        <image class="popup-title-text" src="/image/popup/hyzldnl.png" wx:if="{{pageType==2}}"></image>
+        <image class="popup-title-text" src="/image/popup/cgyqhydnl.png" wx:if="{{pageType==3}}"></image>
+        <image class="popup-title-text" src="/image/popup/cgyqhydts.png" wx:if="{{pageType==4}}"></image>
+    </view>
+    <image bindtap="close" class="close-btn" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/component/popupMoreGame/hbtc-qx.png"></image>
+    <view class="content" wx:if="{{pageType==1}}">
+        <view class="content-item">
+            <image class="item-bg" src="/image/component/shareGuide/mflnl-dk1.png"></image>
+            <view class="item-container">
+                <view class="icon">
+                    <image class="icon-heart" src="/image/component/shareGuide/iocn-ax.png"></image>
+                    <view class="icon-num" data-text="x6" wx:if="{{isShowText}}">x6</view>
+                </view>
+                <view class="desc1">
+                    <text class="red">自己</text>可获得6点能量</view>
+                <view class="desc2">邀请新用户完成6关</view>
+            </view>
+        </view>
+        <view class="content-item">
+            <image class="item-bg" src="/image/component/shareGuide/mflnl-dk1.png"></image>
+            <view class="item-container">
+                <view class="icon">
+                    <image class="icon-heart" src="/image/component/shareGuide/iocn-ax.png"></image>
+                    <view class="icon-num" data-text="x1" wx:if="{{isShowText}}">x1</view>
+                </view>
+                <view class="desc1">
+                    <text class="red">好友</text>可获得1点能量</view>
+            </view>
+        </view>
+    </view>
+    <view class="content" wx:if="{{pageType==2}}">
+        <view class="content-item">
+            <image class="item-bg" src="/image/component/shareGuide/mflnl-dk1.png"></image>
+            <view class="item-container">
+                <view class="icon">
+                    <image class="icon-heart" src="/image/component/shareGuide/iocn-ax.png"></image>
+                    <view class="icon-num" data-text="x2" wx:if="{{isShowText}}">x2</view>
+                </view>
+                <view class="desc1">
+                    <text class="red">自己</text>可获得2点能量</view>
+                <view class="desc2">好友点击即可获得</view>
+            </view>
+        </view>
+        <view class="content-item">
+            <image class="item-bg" src="/image/component/shareGuide/mflnl-dk1.png"></image>
+            <view class="item-container">
+                <view class="icon">
+                    <image class="icon-heart" src="/image/component/shareGuide/iocn-ax.png"></image>
+                    <view class="icon-num" data-text="x1" wx:if="{{isShowText}}">x1</view>
+                </view>
+                <view class="desc1">
+                    <text class="red">好友</text>可获得1点能量</view>
+            </view>
+        </view>
+    </view>
+    <view class="content" wx:if="{{pageType==3}}">
+        <view class="content-item">
+            <image class="item-bg" src="/image/component/shareGuide/mflnl-dk1.png"></image>
+            <view class="item-container">
+                <view class="icon">
+                    <image class="icon-heart" src="/image/component/shareGuide/iocn-ax.png"></image>
+                    <view class="icon-num" data-text="x2" wx:if="{{isShowText}}">x2</view>
+                </view>
+                <view class="desc1">
+                    <text class="red">自己</text>可获得2点能量</view>
+            </view>
+        </view>
+        <view class="content-item">
+            <image class="item-bg" src="/image/component/shareGuide/mflnl-dk1.png"></image>
+            <view class="item-container">
+                <view class="icon">
+                    <image class="icon-heart" src="/image/component/shareGuide/iocn-ax.png"></image>
+                    <view class="icon-num" data-text="x1" wx:if="{{isShowText}}">x1</view>
+                </view>
+                <view class="desc1">
+                    <text class="red">好友</text>可获得1点能量</view>
+            </view>
+        </view>
+    </view>
+    <view class="content" wx:if="{{pageType==4}}">
+        <view class="content-item">
+            <image class="item-bg" src="/image/component/shareGuide/mflnl-dk1.png"></image>
+            <view class="item-container">
+                <view class="icon">
+                    <image class="icon-tip" src="/image/component/shareGuide/hdts-ts.png"></image>
+                    <view class="icon-num" data-text="x1" wx:if="{{isShowText}}">x1</view>
+                </view>
+                <view class="desc1">
+                    <text class="red">自己</text>可获得1点提示</view>
+            </view>
+        </view>
+        <view class="content-item">
+            <image class="item-bg" src="/image/component/shareGuide/mflnl-dk1.png"></image>
+            <view class="item-container">
+                <view class="icon">
+                    <image class="icon-tip" src="/image/component/shareGuide/hdts-ts.png"></image>
+                    <view class="icon-num" data-text="x1" wx:if="{{isShowText}}">x1</view>
+                </view>
+                <view class="desc1">
+                    <text class="red">好友</text>可获得1点提示</view>
+            </view>
+        </view>
+    </view>
+    <button bindtap="toShare" class="btn_default share-btn start-text-move" data-type="{{shareGuideType}}" openType="share">
+        <image class="wx-icon" src="/image/component/shareGuide/icon.png"></image>分享好友</button>
+</popup>
+<wxs module="fn" src="../../common.wxs" />

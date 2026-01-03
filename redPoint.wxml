@@ -1,0 +1,2 @@
+<image class="red-point {{isDown?'down':''}} {{move?'move':''}}" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/common/iocn-gx@2x.png" style="width:{{width}}rpx;height:{{width}}rpx;top:{{top}}rpx;right:{{right}}rpx"></image>
+<wxs module="fn" src="../../common.wxs" />

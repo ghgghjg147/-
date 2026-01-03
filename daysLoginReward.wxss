@@ -1,0 +1,153 @@
+.btn_default {
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    text-align: left;
+    line-height: normal;
+    overflow: visible;
+}
+
+.btn_default::after {
+    border: none;
+}
+
+.days-login-reward {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99;
+    background: rgba(27,26,25,0.75);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    width: 640rpx;
+    height: 165rpx;
+    margin-top: -200rpx;
+}
+
+.reward-content {
+    width: 652rpx;
+    height: 652rpx;
+    margin-top: 27rpx;
+    position: relative;
+    padding-top: 16rpx;
+    box-sizing: border-box;
+}
+
+.reward-img {
+    width: 652rpx;
+    height: 653rpx;
+    animation: bgRotate 4s linear infinite;
+}
+
+@-webkit-keyframes bgRotate {
+    0% {
+        transform: rotate(0) scale(1.2);
+    }
+
+    100% {
+        transform: rotate(360deg) scale(1.2);
+    }
+}
+
+@keyframes bgRotate {
+    0% {
+        transform: rotate(0) scale(1.2);
+    }
+
+    100% {
+        transform: rotate(360deg) scale(1.2);
+    }
+}
+
+.reward-bb {
+    width: 180rpx;
+    height: 192rpx;
+    position: absolute;
+    left: 236rpx;
+    top: 218rpx;
+}
+
+.reward-tip {
+    font-size: 40rpx;
+    line-height: 1.1;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+}
+
+.reward-btn-group {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -60rpx;
+}
+
+.reward-btn>image {
+    width: 361rpx;
+    height: 137rpx;
+    margin: 0 15rpx;
+}
+
+.reward-btn.move {
+    animation: startText 1.5s infinite;
+}
+
+.open-title {
+    width: 605rpx;
+    height: 233rpx;
+}
+
+.reward-btn-big {
+    margin-top: 40rpx;
+    position: relative;
+    transform: translateY(-30%);
+    z-index: 2;
+}
+
+.reward-btn-big>image {
+    width: 306rpx;
+    height: 138rpx;
+    display: block;
+    margin: auto;
+}
+
+.reward-ts-btn1 {
+    width: 360rpx!important;
+    height: 138rpx!important;
+}
+
+.reward-ts-btn2 {
+    font-size: 36rpx;
+    font-weight: bold;
+    line-height: 50rpx;
+    color: #fff;
+    border-bottom: 1px solid #fff;
+    display: inline-block;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-top: 6rpx;
+}
+
+.page-bottom {
+    width: 90%;
+    height: 260rpx;
+    flex-shrink: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 38rpx;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+}

@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "redpoint": "../../component/redPoint/redPoint",
+        "popup": "../popup/popup"
+    }
+}

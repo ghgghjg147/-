@@ -1,0 +1,23 @@
+<popup bind:close="close" notShowClose="{{true}}">
+    <view class="component-container">
+        <image bindtap="close" class="close-btn" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/component/popupMoreGame/hbtc-qx.png"></image>
+        <image class="title-img" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/component/popupMoreGame/gdyx.png"></image>
+        <view class="page-bottom">
+            <ad binderror="bannerError" bindload="bannerLoad" class="ad" unitId="{{shareVideoRule.adv.tryGameBanner}}" wx:if="{{!shareResult.daoliu_banner.imageUrl&&isShowBanner&&shareVideoRule.adv.tryGameBanner}}"></ad>
+            <image bindtap="toPoem" class="daoliu-banner" data-item="{{shareResult.daoliu_banner}}" mode="widthFix" src="{{shareResult.daoliu_banner.imageUrl}}" wx:else></image>
+        </view>
+        <view class="content-list">
+            <view bindtap="clickItem" class="content-item" data-item="{{item}}" wx:for="{{moreGameList}}">
+                <redpoint right="{{-20}}" top="{{-20}}" width="{{50}}" wx:if="{{item.redPoint}}"></redpoint>
+                <image class="content-icon" src="{{item.gameIcon}}"></image>
+                <view class="content-name">{{item.gameName}}</view>
+                <view class="person-num">{{item.playDesc}}</view>
+            </view>
+            <view class="space-item" wx:if="{{moreGameList.length%3==2}}"></view>
+        </view>
+    </view>
+    <button bindtap="toGame" class="btn_default continue-btn" hoverClass="btn-click" hoverStartTime="0" hoverStayTime="100">
+        <image class="continue-btn-image" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/component/popupMoreGame/hpzk-icon-jxyx.png"></image>
+    </button>
+</popup>
+<wxs module="fn" src="../../common.wxs" />

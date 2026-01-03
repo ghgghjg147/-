@@ -1,0 +1,36 @@
+<view class="shop-ticket">
+    <view class="shop-ticket-container">
+        <image class="reward-img" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/index/mrdl-bj-gs.png"></image>
+        <button bindtap="close" class="btn_default close-btn" hoverClass="btn-click" hoverStartTime="0" hoverStayTime="100">
+            <image class="close-btn-image" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/component/shopTicket/redpack_ic_close.png"></image>
+        </button>
+        <image class="bg" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/component/shopTicket/pop_redpack_bg.png"></image>
+        <view class="shop-ticket-content">
+            <view class="title1">恭喜你获得</view>
+            <view class="title2">
+                <view class="line"></view>
+        限时专享优惠劵
+        <view class="line"></view>
+            </view>
+            <view class="money">
+                <view class="num">{{yearData.discounts}}</view>
+                <view class="unit">元</view>
+            </view>
+            <view class="time">距离过期时间:{{countDown}}</view>
+            <image class="prop-title" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/shop/gmnl-wxnlnk.png"></image>
+            <view class="desc">连续签到30天费用全额返还</view>
+            <view bindgetuserinfo="bindgetuserinfo" bindtap="toBuyTicket" class="btn" hoverClass="btn-click" hoverStartTime="0" hoverStayTime="100" openType="{{isIos&&needAuth?'getUserInfo':''}}">
+                <image class="btn-bg" src="{{fn.baseurl(siteInfo.siteroot)}}/addons/yf_chengyujiekong/resource/image/component/shopTicket/pop_redpack_btn.png"></image>
+                <view class="btn-content">
+                    <view class="btn-money">{{yearData.discountPrice}}元</view>
+                    <view class="btn-desc">（已用优惠券）</view>
+                </view>
+            </view>
+            <view class="price">
+                <view class="cur-price">原价:{{yearData.price}}元</view>
+                <view class="origin-price">{{yearData.originalPrice}}元</view>
+            </view>
+        </view>
+    </view>
+</view>
+<wxs module="fn" src="../../common.wxs" />

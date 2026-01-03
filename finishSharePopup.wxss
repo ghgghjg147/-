@@ -1,0 +1,188 @@
+.btn_default {
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    text-align: left;
+    line-height: normal;
+    overflow: visible;
+}
+
+.btn_default::after {
+    border: none;
+}
+
+.finish-share {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: rgba(0,0,0,0.65);
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    width: 474rpx;
+    height: 586rpx;
+    display: block;
+    position: relative;
+}
+
+.card-bg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.card-content {
+    width: 100%;
+    height: 100%;
+    display: block;
+    box-sizing: border-box;
+    padding: 25rpx;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.card-title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20rpx;
+}
+
+.avatar {
+    width: 41rpx;
+    height: 41rpx;
+    display: block;
+}
+
+.title {
+    font-size: 24rpx;
+    font-family: PingFang SC;
+    font-weight: 400;
+    color: rgba(130,130,130,1);
+    line-height: 1;
+    margin-left: 12rpx;
+}
+
+.desc {
+    width: 100%;
+    font-size: 32rpx;
+    font-family: PingFang SC;
+    font-weight: 400;
+    color: rgba(29,29,29,1);
+    line-height: 1.05;
+    word-break: break-all;
+}
+
+.card-img {
+    width: 430rpx;
+    height: 344rpx;
+    display: block;
+    margin-top: 15rpx;
+}
+
+.btn-container {
+    width: 384rpx;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 43rpx;
+}
+
+.btn-item {
+    text-align: center;
+}
+
+.btn-icon {
+    width: 100rpx;
+    height: 100rpx;
+    display: block;
+    margin: 0 auto 15rpx;
+}
+
+.btn-title {
+    font-size: 28rpx;
+    font-family: PingFang SC;
+    font-weight: bold;
+    color: rgba(255,255,255,1);
+}
+
+.bottom-bar {
+    width: 100%;
+    height: 100rpx;
+    background: rgba(253,246,230,1);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bottom-text-container {
+    display: flex;
+    align-items: center;
+}
+
+.bottom-text {
+    font-size: 42rpx;
+    font-family: PingFang SC;
+    font-weight: bold;
+    text-decoration: underline;
+    color: rgba(76,56,42,1);
+    margin-left: 50rpx;
+}
+
+.share-btn-image {
+    width: 236rpx;
+    height: 70rpx;
+    display: block;
+    margin-right: 70rpx;
+}
+
+.start-text-move {
+    animation: startText 1.5s infinite;
+}
+
+@-webkit-keyframes startText {
+    0% {
+        transform: scale(1);
+    }
+
+    40% {
+        transform: scale(1.1);
+    }
+
+    80% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes startText {
+    0% {
+        transform: scale(1);
+    }
+
+    40% {
+        transform: scale(1.1);
+    }
+
+    80% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
